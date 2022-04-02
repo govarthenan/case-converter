@@ -1,9 +1,20 @@
-string = input("Paste input here: ").strip()
+def kebab(string_list) -> str:
 
-words = string.split(" ")  # breaking the string into individual words
+    kebab_casted = []  # List to store formatted words
 
-# changing all words are into lowercase
-for index, word in enumerate(words):
-    words[index] = word.lower()
+    for index, word in enumerate(string_list):
+        if word == len(word) * "-":  # Omit the word if it contains only dashes
+            continue
+        elif word.startswith("-") or word.endswith("-"):
+            kebab_casted.append(word.lower().strip("-"))  # Remove leading/trailing dashes if they are present
+        else:
+            kebab_casted.append(word.lower())
 
-print("-".join(words))
+    return "-".join(kebab_casted)
+
+
+string = input("Paste string here: ").strip()
+
+words = string.split(" ")  # Break the string into individual words at spaces
+
+print(kebab(words))
