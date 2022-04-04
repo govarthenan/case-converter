@@ -11,10 +11,3 @@ def kebab(string_list) -> str:
             kebab_casted.append(word.lower())
 
     return "-".join(kebab_casted)
-
-
-string = input("Paste string here: ").strip()
-
-words = string.split(" ")  # Break the string into individual words at spaces
-
-print(kebab(words))
