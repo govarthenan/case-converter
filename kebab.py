@@ -1,4 +1,4 @@
-def kebab(string_list) -> str:
+def cast(string_list) -> str:
 
     kebab_casted = []  # List to store formatted words
 
